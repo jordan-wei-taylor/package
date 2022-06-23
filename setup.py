@@ -29,7 +29,7 @@ setuptools.setup(
                                     ],
     package_dir                   = {"" : "src"},
     package                       = setuptools.find_packages(where = "src"),
-    python_requires               = ">=3.6",
+    python_requires               = ">=3.8",
     license                       = read('LICENSE'), 
     install_requires              = [
         # 'numpy>=1.22.3', # example requirements
