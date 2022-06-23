@@ -1,0 +1,41 @@
+echo -n "author          : "
+read author
+
+echo -n "package         : "
+read package
+
+echo -n "version         : "
+read version
+
+echo -n "github-username : "
+read username
+
+echo -n "email           : "
+read email
+
+function replace() {
+    sed -i -e "0,/$2 .*/s/$2 .*/$2 = '$3'/" $1
+}
+
+mv src/$(ls src | grep -v "egg") src/$package
+
+replace setup.py username "$username"
+replace setup.py package "$package"
+replace setup.py version "$version"
+replace setup.py author "$author"
+replace setup.py email "$email"
+
+replace docs/conf.py project "$package"
+replace docs/conf.py author "$package"
+replace docs/conf.py 'version = release' "$version"
+
+replace docs/index.rst * "$package"
+
+./activate
+
+if ! command -v tox &> /dev/null
+then
+    echo "installing tox..."
+    echo "sudo apt install tox"
+    sudo apt install tox
+fi

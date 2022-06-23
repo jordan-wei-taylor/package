@@ -1,19 +1,17 @@
 # package template
 
-Change variables in the ``setup.py`` file as appropriate. Change ``src/package`` to ``src/your_package_name``.
+A template repository for a python package with a readthedocs style website.
 
-It is always recommended to have a virtual python environment.
+First run the setup file and enter your details
 
 ```bash
-# create virtual python environment if you do not have one
-python3 -m venv env
+./setup
+```
 
-# activate it
-# Mac OS / Linux
-source env/bin/activate
+Next, ``source`` the ``activate`` file to switch to a virtual python environment and have access to the functions ``build-website`` and ``view-website``.
 
-# Windows
-./env/Scripts/activate
+```bash
+source 
 ```
 
 To install locally run
