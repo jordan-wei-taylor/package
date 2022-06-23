@@ -1,10 +1,10 @@
 # package template
 
-Change variables in the ``setup.py`` file as appropriate.
+Change variables in the ``setup.py`` file as appropriate. Change ``src/package`` to ``src/your_package_name``.
 
 It is always recommended to have a virtual python environment.
 
-```console
+```bash
 # create virtual python environment if you do not have one
 python3 -m venv env
 
@@ -18,19 +18,19 @@ source env/bin/activate
 
 To install locally run
 
-```console
-pip3 install .
+```bash
+pip install .
 ```
 
 To upload to pypi install the required libraries first
 
-```console
+```bash
 pip install build twine
 ```
 
 and call
 
-```console
+```bash
 python -m build
 twine upload dist/*
 ```

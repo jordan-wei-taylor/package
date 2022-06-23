@@ -1,2 +1,8 @@
 # virtual python environment
 env
+
+# build info not required
+build
+
+# deprecated output info
+src/*.egg-info
